@@ -96,3 +96,103 @@ Purpose: The web-based platform for hosting Git repositories. It acts as the cen
 ## CI/CD Pipelines (e.g., GitHub Actions, GitLab CI, Jenkins)
 
 Purpose: A set of automated processes designed to streamline the software delivery lifecycle. This includes automatically testing code changes (Continuous Integration) and then building and deploying the application to various environments (Continuous Delivery/Deployment) in an efficient and reliable manner.
+
+
+# Database Design
+For the "Secure & Scalable Data Management Platform" project, the key entities, their important fields, and relationships would be structured as follows:
+
+## Key Entities and Relationships
+### 1. User
+
+Description: Represents an individual user of the platform, who can either be a property owner, a guest making bookings, or both.
+Important Fields:
+id (Primary Key)
+username (Unique)
+email (Unique)
+password_hash (For secure authentication)
+is_active (Account status)
+
+### 2. Property
+
+Description: Represents a listing available for booking (e.g., an apartment, a house, a venue).
+Important Fields:
+id (Primary Key)
+name (e.g., "Cozy Apartment in City Center")
+description (Detailed information about the property)
+address (Location of the property)
+price_per_night (Cost for one night's stay)
+owner_id (Foreign Key to User)
+
+
+###  3. Booking
+
+Description: Represents a reservation made by a guest for a specific property over a period.
+Important Fields:
+id (Primary Key)
+property_id (Foreign Key to Property)
+guest_id (Foreign Key to User)
+start_date
+end_date
+status (e.g., 'pending', 'confirmed', 'cancelled')
+
+
+
+
+
+
+
+
+
+
+
+###  4. Review
+
+Description: Represents feedback provided by a user about a property they have experienced.
+Important Fields:
+id (Primary Key)
+property_id (Foreign Key to Property)
+reviewer_id (Foreign Key to User)
+rating (e.g., 1 to 5 stars)
+comment (Textual feedback)
+
+### 5. Payment
+
+Description: Records financial transactions related to bookings.
+Important Fields:
+id (Primary Key)
+booking_id (Foreign Key to Booking)
+amount
+payment_date
+status (e.g., 'completed', 'failed', 'refunded')
+transaction_id (Reference from payment gateway)
+Entity Relationships:
+User to Property:
+
+A User can be an owner of multiple Properties.
+A Property belongs to one User (its owner).
+(Relationship via Property.owner_id)
+User to Booking:
+
+A User can make multiple Bookings (as a guest).
+A Booking is made by one User (the guest).
+(Relationship via Booking.guest_id)
+Property to Booking:
+
+A Property can have multiple Bookings.
+A Booking is for one Property.
+(Relationship via Booking.property_id)
+User to Review:
+
+A User can write multiple Reviews.
+A Review is written by one User (the reviewer).
+(Relationship via Review.reviewer_id)
+Property to Review:
+
+A Property can receive multiple Reviews.
+A Review is given for one Property.
+(Relationship via Review.property_id)
+Booking to Payment:
+
+A Booking typically triggers one or more Payments (e.g., an initial payment, or subsequent refund transactions if applicable).
+A Payment is associated with one Booking.
+(Relationship via Payment.booking_id)

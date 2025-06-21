@@ -136,15 +136,6 @@ end_date
 status (e.g., 'pending', 'confirmed', 'cancelled')
 
 
-
-
-
-
-
-
-
-
-
 ###  4. Review
 
 Description: Represents feedback provided by a user about a property they have experienced.
@@ -196,3 +187,40 @@ Booking to Payment:
 A Booking typically triggers one or more Payments (e.g., an initial payment, or subsequent refund transactions if applicable).
 A Payment is associated with one Booking.
 (Relationship via Payment.booking_id)
+
+
+
+# Feature Breakdown
+Based on the project overview, goals, and entities, here are the main features of the "Secure & Scalable Data Management Platform":
+
+## User Management
+
+This feature allows for the creation, authentication, and management of user accounts, enabling both property owners and guests to interact with the platform. It provides personalized experiences and secures access to user-specific data.
+
+## Property Management
+
+This system enables property owners to list, update, and manage their properties, including details like descriptions, pricing, and availability. It is crucial for populating the platform with discoverable listings and giving owners control over their offerings.
+
+## Booking System
+
+A central feature that facilitates the reservation process, allowing guests to search for properties, check availability, and make bookings. It manages the lifecycle of a reservation from request to confirmation or cancellation.
+
+## Review System
+
+This functionality allows users to submit ratings and written reviews for properties they have experienced. It helps build trust within the community and provides valuable feedback for both property owners and prospective guests.
+
+## Payment Processing
+
+Manages all financial transactions related to bookings, including secure payment collection and recording. It ensures that monetary exchanges are handled efficiently and transparently within the platform.
+
+## Authentication & Authorization
+
+This foundational security feature controls user access and defines what actions authenticated users are permitted to perform. It safeguards sensitive data and ensures that only authorized individuals can access specific features or information.
+
+## GraphQL API Services
+
+As the primary interface to the backend, this feature provides a flexible and efficient way for frontend applications to query and manipulate data. It allows clients to request exactly what they need, minimizing over-fetching and under-fetching of data.
+
+## Automated CI/CD Pipelines
+
+This feature automates the process of testing, building, and deploying the application code. It ensures continuous integration of new code and rapid, reliable deployment of updates, enhancing development efficiency and reducing manual errors.

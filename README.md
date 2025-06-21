@@ -224,3 +224,37 @@ As the primary interface to the backend, this feature provides a flexible and ef
 ## Automated CI/CD Pipelines
 
 This feature automates the process of testing, building, and deploying the application code. It ensures continuous integration of new code and rapid, reliable deployment of updates, enhancing development efficiency and reducing manual errors.
+
+
+
+# API Security
+Implementing robust security measures is paramount for the "Secure & Scalable Data Management Platform" to protect sensitive data, maintain user trust, and ensure operational integrity.
+
+## Key Security Measures Implemented:
+### Authentication:
+
+Explanation: This process verifies the identity of users attempting to access the system (e.g., through username/password, or social logins). It ensures that only legitimate users can gain access to their respective accounts.
+
+### Authorization:
+
+Explanation: Once a user is authenticated, authorization determines what specific actions they are permitted to perform and what data they can access. For instance, only a property owner can edit their listings, while a guest can only view and book them.
+
+### Rate Limiting:
+
+Explanation: This mechanism restricts the number of API requests a user or IP address can make within a specified timeframe. It acts as a defense against brute-force attacks, denial-of-service (DoS) attempts, and general API abuse.
+
+### Data Encryption (In Transit & At Rest):
+
+Explanation: All communication between the frontend and backend will be encrypted using HTTPS/SSL/TLS to protect data from interception during transmission. Additionally, sensitive data stored in the MySQL database will be encrypted to safeguard it even if the database itself is compromised.
+
+### Secure Password Storage:
+
+Explanation: User passwords will never be stored in plain text. Instead, they will be securely hashed using strong, industry-standard, one-way cryptographic algorithms with salts. This protects user credentials in the event of a data breach, making them unreadable.
+
+### Input Validation & Sanitization:
+
+Explanation: All data received from users will be rigorously validated and sanitized before being processed or stored. This prevents common injection vulnerabilities (like SQL Injection or Cross-Site Scripting) by ensuring that only expected and safe data formats are accepted.
+
+### Comprehensive Logging & Monitoring:
+
+Explanation: The system will implement detailed logging of security-relevant events, such as failed login attempts, unauthorized access attempts, and significant data modifications. Continuous monitoring of these logs will enable rapid detection and response to potential security incidents.

@@ -64,3 +64,35 @@ Guide the implementation of advanced API security measures.
 Lead the planning and documentation of complex software project components.
 Facilitate the seamless integration and ensure the unified operation of Django, MySQL, and GraphQL.
 Champion collaborative team workflows and code standards on GitHub.
+
+
+
+
+# Technology Stack
+## Django
+
+Purpose: The primary web framework written in Python, used for building the entire backend logic, defining the application's structure, managing URLs, handling requests, and interacting with the database.
+
+## Python
+
+Purpose: The core programming language in which the entire backend application is developed. Django itself is a Python framework, so Python is fundamental to writing all the server-side code and business logic.
+MySQL
+
+Purpose: The relational database management system used for persistently storing and organizing all the structured data required by the platform, such as user profiles, application records, and other transactional information.
+
+
+## GraphQL
+
+Purpose: Serves as the API (Application Programming Interface) layer for the backend. It allows clients (like a frontend application) to request exactly the data they need in a single query, providing a flexible and efficient way for applications to communicate with the backend.
+
+## Git
+
+Purpose: The distributed version control system used by the development team to track changes in the codebase, manage different versions of files, and facilitate parallel development among multiple contributors.
+
+## GitHub
+
+Purpose: The web-based platform for hosting Git repositories. It acts as the central hub for team collaboration, enabling code sharing, code reviews (via pull requests), issue tracking, and overall project management for the codebase.
+
+## CI/CD Pipelines (e.g., GitHub Actions, GitLab CI, Jenkins)
+
+Purpose: A set of automated processes designed to streamline the software delivery lifecycle. This includes automatically testing code changes (Continuous Integration) and then building and deploying the application to various environments (Continuous Delivery/Deployment) in an efficient and reliable manner.
